@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        let exam = parseFloat(prompt("Nhập điểm bài kiểm tra"));
+        let exam2 = parseFloat(prompt("Nhập điểm bài thi giữa kỳ"));
+        let exam3 = parseFloat(prompt("Nhập điểm bài thi cuối kỳ"));
+        let equal = (exam + (exam2 * 2) + (exam3 * 3)) / 6;
+        function round(value, precision) {
+            var multiplier = Math.pow(10, precision || 0);
+            return Math.round(value * multiplier) / multiplier;
+        }
+        equal = round(equal, 1);
+        function result() {
+            if (equal < 0) {
+                alert("Nhập sai điểm");
+            } else if (equal < 3.5) {
+                alert("Điểm trung bình: " + equal + " Học lực yếu");
+            } else if (equal < 6.5) {
+                alert("Điểm trung bình: " + equal + " Học lực trung bình");
+            } else if (equal < 7.9) {
+                alert("Điểm trung bình: " + equal + " Học lực khá");
+            } else if (equal <= 10) {
+                alert("Điểm trung bình: " + equal + " Học lực giỏi");
+            } else {
+                alert("Nhập sai điểm");
+            }
+        }
+        result();
+    </script>
+</body>
+</html>
